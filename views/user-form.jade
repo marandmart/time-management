@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= !edit ? "Nova entrada" : "Editar entrada"
+  a(href="/") Início
+  form(action=edit ? `/users/${edit.id}?_method=PUT` : "/users" method="POST")
+    div 
+        label(for="name") Nome: 
+        input(type="text" id="name" name="name" required value=edit ? edit.name : "")
+    div 
+        label(for="email") E-mail: 
+        input(type="email" id="email" name="email" required value=edit ? edit.email : "")
+
+    div
+      button(type="submit") #{edit ? "Atualizar" : "Criar"}

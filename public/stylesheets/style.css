@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+form div {
+  margin: 8px auto;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  margin-top: 8px;
+}
+
+ol li a {
+  margin-right: 8px;
+}
+
+ol li {
+  margin-top: 8px;
+}
+
+li form {
+  display: inline;
+}

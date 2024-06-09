@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/") Inicio
+  br
+  a(href="/users/form") Adicionar novo
+  ol
+    each item in data
+      li 
+        | name: #{item.name}
+        br
+        | email: #{item.email}
+        br
+        a(href='/users/form/' + item.id) Editar
+        form(action='/users/delete/' + item.id + '?_method=DELETE' method="POST")
+          button(type="submit") Apagar

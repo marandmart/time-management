@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/") Início
+  ol
+    each item in data
+      li 
+        | Nome: #{item.name} 
+        br
+        | Data: #{item.date} 
+        br
+        | Inicio: #{item.start_time} 
+        br
+        | Fim: #{item.end_time}

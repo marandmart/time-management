@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Bem-vindo(a) ao #{title}
+
+  h2= "Links"
+  ul 
+    li 
+      a(href="/users") Lista de usuários 
+    li
+      a(href="/schedules") Cronogramas
+    li 
+      a(href="/schedules/new-schedule-form") Registrar novo cronograma 
