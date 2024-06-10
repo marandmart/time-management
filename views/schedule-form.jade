@@ -5,7 +5,7 @@ block content
   a(href="/") Início
   form(action="/schedules" method="POST")
     div
-      label(for="dropdown") Escolha:
+      label(for="dropdown") Pessoa:
       select(id="dropdown" name="userId" required)
         option Escolha uma pessoa
         each item in options
@@ -18,10 +18,10 @@ block content
       input(type="date" id="date" name="date" required value=edit ? edit.date : "")
     div
       label(for="entryTime") Hora de entrada:
-      input(type="number" id="entryTime" name="start_time" min="0" max="24" step="1" required value=edit ? edit.start_time : "")
+      input(type="number" id="entryTime" name="start_time" min="0" max="23" step="1" required value=edit ? edit.start_time : "")
     div
       label(for="exitTime") Hora de saida:
-      input(type="number" id="exitTime" name="end_time" min="0" max="24" step="1" required value=edit ? edit.end_time : "")
+      input(type="number" id="exitTime" name="end_time" min="0" max="23" step="1" required value=edit ? edit.end_time : "")
 
     div
       button(type="submit") Submit
