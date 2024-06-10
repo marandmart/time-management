@@ -3,7 +3,7 @@ extends layout
 block content
   h1= !edit ? "Nova entrada" : "Editar entrada"
   a(href="/") Início
-  form(action="/schedules" method="POST")
+  form(action="/schedules" method="POST" id="scheduleForm")
     div
       label(for="dropdown") Pessoa:
       select(id="dropdown" name="userId" required)
@@ -25,3 +25,13 @@ block content
 
     div
       button(type="submit") Submit
+
+    script.
+      document.getElementById("scheduleForm").addEventListener("submit", function(event) {
+        var startTime = document.getElementById('entryTime').value;
+        var endTime = document.getElementById('exitTime').value;
+        if (parseInt(startTime) >= parseInt(endTime)) {
+          alert('Hora de entrada deve ser menor que a hora de saída.');
+          event.preventDefault();
+        }
+      })
